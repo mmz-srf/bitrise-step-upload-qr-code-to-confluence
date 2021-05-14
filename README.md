@@ -1,7 +1,23 @@
 # Upload QR Code to Confluence
 
-TODO
+This step will upload the QR Code generate by the Bitrise [create-install-page-qr-code](https://github.com/bitrise-steplib/steps-create-install-page-qr-code) Step to Confluence.
 
+Required input parameters:
+
+* qr_code_image_url: QR Code Image URL
+* confluence_content_id: Confluence Content ID
+* confluence_attachment_name: Confluence Attachment Name
+* confluence_comment: Attachment Comment
+* confluence_username: Confluence Username
+* confluence_password: Confluence Password
+
+## How to integrate this Step in your workflow
+
+```
+- git::https://github.com/mmz-srf/bitrise-step-upload-qr-code-to-confluence.git:
+        title: upload-qr-code-to-confluence
+        - confluence_attachment_name: AppName-dev-hms.jpg
+```
 
 ## How to use this Step
 
@@ -82,12 +98,12 @@ in the [bitrise CLI repository](https://github.com/bitrise-io/bitrise/blob/maste
 You can share your Step or step version with the [bitrise CLI](https://github.com/bitrise-io/bitrise). If you use the `bitrise.yml` included in this repository, all you have to do is:
 
 1. In your Terminal / Command Line `cd` into this directory (where the `bitrise.yml` of the step is located)
-1. Run: `bitrise run test` to test the step
-1. Run: `bitrise run audit-this-step` to audit the `step.yml`
-1. Check the `share-this-step` workflow in the `bitrise.yml`, and fill out the
+2. Run: `bitrise run test` to test the step
+3. Run: `bitrise run audit-this-step` to audit the `step.yml`
+4. Check the `share-this-step` workflow in the `bitrise.yml`, and fill out the
    `envs` if you haven't done so already (don't forget to bump the version number if this is an update
    of your step!)
-1. Then run: `bitrise run share-this-step` to share the step (version) you specified in the `envs`
-1. Send the Pull Request, as described in the logs of `bitrise run share-this-step`
+5. Then run: `bitrise run share-this-step` to share the step (version) you specified in the `envs`
+6. Send the Pull Request, as described in the logs of `bitrise run share-this-step`
 
 That's all ;)
